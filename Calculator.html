@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Calculator.css">
+    <script src="./Calculator.js"></script>
     <title>Calculator</title>
 </head>
 <body>
     <div class="machine">
-        <div class="screen" id="screen"></div>
+        <div class="screen" id="screen" onclick="updateScreen()"></div>
         <br>
-        <button type="button" id="Addition">+</button>
-        <button type="button" id="Subtraction">-</button>
-        <button type="button" id="Multiplication">*</button>
-        <button type="button" id="Division">/</button>
+        <button type="button" id="addition" onclick="handleAddition()">+</button>
+        <button type="button" id="subtraction" onclick="handleSubtraction()">-</button>
+        <button type="button" id="multiplication" onclick="handleMultiplication()">*</button>
+        <button type="button" id="division" onclick="handleDivision()">/</button>
         <br>
-        <button type="button" id="seven">7</button>
-        <button type="button" id="eight">8</button>
-        <button type="button" id="nine">9</button>
-        <button type="button" id="Equal">=</button>
+        <button type="button" onclick="handleNumber('7')">7</button>
+        <button type="button" onclick="handleNumber('8')">8</button>
+        <button type="button" onclick="handleNumber('9')">9</button>
+        <button type="button" id="equal" onclick="handleEqual()">=</button>
         <br>
-        <button type="button" id="four">4</button>
-        <button type="button" id="five">5</button>
-        <button type="button" id="six">6</button>
-        <button type="button" id="C">C</button>
+        <button type="button" onclick="handleNumber('4')">4</button>
+        <button type="button" onclick="handleNumber('5')">5</button>
+        <button type="button" onclick="handleNumber('6')">6</button>
+        <button type="button" id="C" onclick="func_clearScreen()">C</button>
         <br>
-        <button type="button" id="three">1</button>
-        <button type="button" id="two">2</button>
-        <button type="button" id="one">3</button>
-        <button type="button" id="0" onclick="reset()">0</button>
+        <button type="button" onclick="handleNumber('1')">1</button>
+        <button type="button" onclick="handleNumber('2')">2</button>
+        <button type="button" onclick="handleNumber('3')">3</button>
+        <button type="button" onclick="handleNumber('0')">0</button>
     </div>
 </body>
 </html>
