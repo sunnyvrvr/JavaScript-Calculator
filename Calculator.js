@@ -28,6 +28,11 @@ function func_clearScreen(){
 
 /*사칙연산*/
 function handleEqual(){
+    console.log("계산이전 currentValue", currentValue);
+    if(isNaN(storedValue)){ //연산기호를 2회이상 입력할 경우 처리 
+        storedValue = resultValue;               
+    }
+    console.log("계산이전 storedValue", storedValue);
     if(currentOperation&& storedValue!==null&& currentValue!== ""){
     switch (currentOperation) {
         case 'add':
@@ -35,18 +40,21 @@ function handleEqual(){
             resultValue = storedValue + parseInt(currentValue);
             console.log("resultValue:", resultValue);
             updateResultScreen();
+            currentValue = resultValue; 
             break;
         case 'subtract':
             console.log("currentValue;", currentValue);
             resultValue = storedValue - parseInt(currentValue);
             console.log("resultValue:", resultValue);
             updateResultScreen();
+            currentValue = resultValue; 
             break;
-        case 'multiplicate':
+        case 'multiply':
             console.log("currentValue;", currentValue);
             resultValue = storedValue *(parseInt(currentValue));
             console.log("resultValue:", resultValue);
             updateResultScreen();
+            currentValue = resultValue; 
             break;
         case 'divide':
             if(parseInt(currentValue) === 0){
@@ -57,6 +65,7 @@ function handleEqual(){
             resultValue = storedValue /(parseInt(currentValue));
             console.log("resultValue:", resultValue);
             updateResultScreen();
+            currentValue = resultValue; 
             break;
     }
     }
@@ -65,7 +74,7 @@ function handleEqual(){
 function add(){
   //스크린의 값을 숫자로 변환해서 storedValue에 할당
   storedValue = parseInt(currentValue); 
-  console.log("storedValue:", storedValue);
+  console.log("storedValue:", storedValue); //storedValue확인
   currentOperation = 'add';
   currentValue="";
 }
@@ -90,12 +99,12 @@ function handleSubtraction(){
 function multiply(){
     storedValue = parseInt(currentValue); 
     console.log("storedValue:", storedValue);
-    currentOperation = 'multiplicate';
+    currentOperation = 'multiply';
     currentValue="";
   }
   
 function handleMultiplication(){
-    console.log("multiplication button click");
+    console.log("multiply button click");
     multiply();
 }
 function divide(){
@@ -106,6 +115,6 @@ function divide(){
   }
   
 function handleDivision(){
-    console.log("multiplication button click");
+    console.log("division button click");
     divide();
 }
