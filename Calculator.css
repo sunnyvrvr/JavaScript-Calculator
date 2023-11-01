@@ -1,0 +1,23 @@
+.{
+    box-sizing: border-box;
+}
+.calculator{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+.calculator input{
+    grid-column: span 4;
+    padding:10px;
+    font-size: 18px;
+}
+
+.calculator button{
+    padding: 10px;
+}
+#result{
+    text-align: right;
+}
