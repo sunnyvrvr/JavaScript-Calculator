@@ -1,0 +1,26 @@
+{
+  "name": "simple-calculator",
+  "version": "1.0.0",
+  "description": "Getting started with Node & Express",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sunny Jung",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnyvrvr/JavaScript-Calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sunnyvrvr/JavaScript-Calculator/issues"
+  },
+  "homepage": "https://github.com/sunnyvrvr/JavaScript-Calculator#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "readline": "^1.3.0"
+  },
+  "devDependencies": {}
+}
