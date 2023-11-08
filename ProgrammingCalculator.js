@@ -1,7 +1,9 @@
-import { StandardCalculator } from './StandardCalculator.js';
+import { GenericCalculator } from './GenericCalculator.js';
 
-export class ProgrammingCalculator extends StandardCalculator {
+class ProgrammingCalculator extends GenericCalculator {
     DecimalToBinary(decimalNumber) {
         return decimalNumber.toString(2);
     }
 }
+
+export { ProgrammingCalculator };

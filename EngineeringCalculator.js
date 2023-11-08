@@ -1,6 +1,6 @@
-import { StandardCalculator } from './StandardCalculator.js';
+import { GenericCalculator } from './GenericCalculator.js'
 
-class EngineeringCalculator extends StandardCalculator {
+class EngineeringCalculator extends GenericCalculator {
     constructor(numA, numB, operator) {
         super(numA, numB, operator);
     }
