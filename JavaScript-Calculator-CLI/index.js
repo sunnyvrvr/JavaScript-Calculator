@@ -33,15 +33,30 @@ rl.question("Enter the Mode(1/2/3):", (mode) => {
             return;
     }
 
-    rl.question('Enter first number: ', (num1) => {
-        rl.question(`Enter operator (${calculator.getOperators()}): `, (operator) => {
-            rl.question('Enter second number: ', (num2) => {
-                num1 = parseFloat(num1);
-                num2 = parseFloat(num2);
-                const result = calculator.operate(operator, num1, num2);
-                console.log(`Result: ${result}`);
-                rl.close();
-            });
-        });
+    rl.question('Enter first number: ', (input) => { //첫번째 숫자 입력
+        const num1 = parseFloat(input);
+        if(!isNaN(num1)) {
+            rl.question(`Enter operator (${calculator.getOperators()}): `, (operator) => { //연산자 입력               
+                if(calculator.getOperators().includes(operator)){
+                    rl.question('Enter second number: ', (input) => { //두번째 숫자 입력
+                        const num2 = parseFloat(input)
+                        if(!isNaN(num2)){
+                            const result = calculator.operate(operator, num1, num2);
+                            console.log(`Result: ${result}`);
+                            rl.close();
+                        } else {
+                            console.log("second number input error");
+                            rl.close();                            
+                        }
+                    });
+                } else {
+                    console.log("operator input error");
+                    rl.close();
+                }
+                });
+        } else {
+            console.log("first number input error");
+            rl.close();
+        }       
     });
 });
